@@ -20,6 +20,6 @@ day1a xs = sum xs
 day1b :: [Integer] -> Integer
 day1b xs = day1b' (cycle xs) 0 Set.empty
   where
-    day1b' (x:xs)  nbr set
+    day1b' (x:xs) nbr set
       | nbr `Set.member` set = nbr
       | otherwise = day1b' xs (nbr + x) (Set.insert nbr set)
