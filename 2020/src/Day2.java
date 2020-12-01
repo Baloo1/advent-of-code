@@ -7,7 +7,7 @@ public class Day2 {
     public static HashMap<Integer, Integer> input = new HashMap<>();
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Projects\\AdventOfCode\\Day1Input.txt");
+        File file = new File("C:\\Projects\\AdventOfCode\\Day2Input.txt");
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNextLine()) {
