@@ -9,7 +9,7 @@ public class Day1 {
     public static int triple = 0;
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Projects\\AdventOfCode\\Day1Input.txt");
+        File file = new File("C:\\Projects\\advent-of-code\\2020\\Day1Input.txt");
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNextLine()) {
