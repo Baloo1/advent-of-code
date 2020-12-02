@@ -13,23 +13,23 @@ public class Day2 {
         while (scanner.hasNextLine()) {
             String nextLine = (scanner.nextLine());
 
+            /*Input parsing*/
             String[] split = nextLine.split(": ");
-            String[] letter = split[0].split(" ");
-            String[] splitNbr = letter[0].split("-");
+            String[] letterArray = split[0].split(" ");
+            String[] splitNbr = letterArray[0].split("-");
             int minNum = Integer.parseInt(splitNbr[0]);
             int maxNum = Integer.parseInt(splitNbr[1]);
-            String letter1 = letter[1];
+            String letter = letterArray[1];
 
             /*Problem 1 */
             int lastIndex = 0;
             int count = 0;
             while (lastIndex != -1) {
-
-                lastIndex = split[1].indexOf(letter1, lastIndex);
+                lastIndex = split[1].indexOf(letter, lastIndex);
 
                 if (lastIndex != -1) {
                     count++;
-                    lastIndex += letter1.length();
+                    lastIndex += letter.length();
                 }
             }
             if (minNum <= count && count <= maxNum) {
@@ -37,15 +37,10 @@ public class Day2 {
             }
 
             /*Problem 2 */
-            String words = split[1];
-            int nbr = 0;
-            if (words.toCharArray()[minNum - 1] == letter1.toCharArray()[0]) {
-                nbr++;
-            }
-            if (words.toCharArray()[maxNum - 1] == letter1.toCharArray()[0]) {
-                nbr++;
-            }
-            if (nbr == 1) {
+            char lowIndex = split[1].toCharArray()[minNum - 1];
+            char highIndex = split[1].toCharArray()[maxNum - 1];
+            char letterToCompare = letter.toCharArray()[0];
+            if (lowIndex == letterToCompare ^ highIndex == letterToCompare) {
                 problem2++;
             }
         }
