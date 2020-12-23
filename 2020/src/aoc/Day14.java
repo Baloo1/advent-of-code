@@ -11,7 +11,8 @@ public class Day14 {
     static HashMap<String, Integer> problem2Register = new HashMap<>();
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day14Input.txt");
+        System.out.println("\nDay 14");
+        File file = new File("./2020/input/Day14Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<String> input = new ArrayList<>();

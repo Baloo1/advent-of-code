@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class Day08 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day08Input.txt");
+        System.out.println("\nDay 8");
+        File file = new File("./2020/input/Day08Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<Pair<String, Integer>> input = new ArrayList<>();

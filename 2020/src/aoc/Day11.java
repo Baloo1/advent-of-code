@@ -11,7 +11,8 @@ public class Day11 {
     static int height;
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day11Input.txt");
+        System.out.println("\nDay 11");
+        File file = new File("./2020/input/Day11Input.txt");
         Scanner scanner = new Scanner(file);
 
         /*Conways game of ferry*/
@@ -30,26 +31,38 @@ public class Day11 {
             previousGeneration = generation;
             generation = futureGeneration(generation, false, 4);
         }
-        System.out.println("\n\n Final Generation Problem 1 \n\n");
-        int problem1 = printGeneration(generation);
+//        System.out.println("\n\n Final Generation Problem 1 \n\n");
+        int problem1 = calculateSeats(generation);
 
         /*Problem 2*/
-        System.out.println("\n\n Starting Problem 2 \n\n");
+//        System.out.println("\n\n Starting Problem 2 \n\n");
         previousGeneration = matrixOfLife.toArray(new char[0][0]);
         generation = futureGeneration(previousGeneration, true, 5);
         while (!Arrays.deepEquals(generation, previousGeneration)) {
             previousGeneration = generation;
             generation = futureGeneration(generation, true, 5);
         }
-        System.out.println("\n\n Final Generation Problem 2 \n\n");
-        int problem2 = printGeneration(generation);
+//        System.out.println("\n\n Final Generation Problem 2 \n\n");
+        int problem2 = calculateSeats(generation);
 
         System.out.println("Problem 1: " + problem1);
         System.out.println("Problem 2: " + problem2);
     }
 
-    static int printGeneration(char[][] generation) {
+    static int calculateSeats(char[][] generation) {
         int occupiedSeat = 0;
+        for (char[] row : generation) {
+            for (char seat : row) {
+                if (seat == '#') {
+                    occupiedSeat++;
+                }
+            }
+        }
+        return occupiedSeat;
+    }
+
+    static void printGeneration(char[][] generation) {
+        System.out.println("\n Generation \n");
         for (char[] row : generation) {
             for (char seat : row) {
                 if (seat == 'L')
@@ -58,12 +71,10 @@ public class Day11 {
                     System.out.print(".");
                 } else {
                     System.out.print("#");
-                    occupiedSeat++;
                 }
             }
             System.out.println();
         }
-        return occupiedSeat;
     }
 
     static char[][] futureGeneration(char[][] generation, boolean sightSearch, int seatsForSwitch) {
@@ -92,8 +103,7 @@ public class Day11 {
                 }
             }
         }
-        System.out.println("\n New Generation \n");
-        printGeneration(future);
+        //  printGeneration(future);
         return future;
     }
 

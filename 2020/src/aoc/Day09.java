@@ -6,7 +6,8 @@ import java.util.*;
 
 public class Day09 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day09Input.txt");
+        System.out.println("\nDay 9");
+        File file = new File("./2020/input/Day09Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<Long> input = new ArrayList<>();

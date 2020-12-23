@@ -11,7 +11,8 @@ public class Day01 {
     public static int triple = 0;
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day01Input.txt");
+        System.out.println("Day 1");
+        File file = new File("./2020/input/Day01Input.txt");
         Scanner scanner = new Scanner(file);
 
         while (scanner.hasNextLine()) {

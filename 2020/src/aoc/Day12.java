@@ -14,7 +14,8 @@ public class Day12 {
     static int wayY = 1;
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day12Input.txt");
+        System.out.println("\nDay 12");
+        File file = new File("./2020/input/Day12Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<Pair<Character, Integer>> instructions = new ArrayList<>();

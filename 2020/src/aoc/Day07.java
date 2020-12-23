@@ -6,7 +6,8 @@ import java.util.*;
 
 public class Day07 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day07Input.txt");
+        System.out.println("\nDay 7");
+        File file = new File("./2020/input/Day07Input.txt");
         Scanner scanner = new Scanner(file);
 
         HashMap<String, String[]> bags = new HashMap<>();
