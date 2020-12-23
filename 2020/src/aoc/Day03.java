@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Day03 {
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day3Input.txt");
+        File file = new File("./2020/Day03Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<String> input = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Day03 {
 
         /*Problem 1*/
         long problem1 = findTree(1, 3, input);
-        System.out.println("Problem 1:" + problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /*Problem 2*/
         int[][] slopes = {{1, 1}, {1, 3}, {1, 5}, {1, 7}, {2, 1}};
@@ -28,7 +28,7 @@ public class Day03 {
         for (int[] slope : slopes) {
             problem2 *= findTree(slope[0], slope[1], input);
         }
-        System.out.println("Problem 2:" + problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 
     static long findTree(int down, int right, ArrayList<String> input) {

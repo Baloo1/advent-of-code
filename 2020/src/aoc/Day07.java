@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Day07 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day7Input.txt");
+        File file = new File("./2020/Day07Input.txt");
         Scanner scanner = new Scanner(file);
 
         HashMap<String, String[]> bags = new HashMap<>();
@@ -42,7 +42,7 @@ public class Day07 {
             }
         }
         problem1.remove("shiny gold");
-        System.out.println(problem1.size());
+        System.out.println("Problem 1: " + problem1.size());
 
         /*Problem 2*/
         int problem2 = 0;
@@ -73,6 +73,6 @@ public class Day07 {
                 }
             }
         }
-        System.out.println(problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 }

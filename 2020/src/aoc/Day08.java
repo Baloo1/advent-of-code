@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Day08 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day8Input.txt");
+        File file = new File("./2020/Day08Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<Pair<String, Integer>> input = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Day08 {
 
         /*Problem 1*/
         int problem1 = runAssembly(input).right();
-        System.out.println(problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /*Problem 2*/
         int problem2 = 0;
@@ -46,7 +46,7 @@ public class Day08 {
                 }
             }
         }
-        System.out.println(problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 
     /*Should be reusable*/

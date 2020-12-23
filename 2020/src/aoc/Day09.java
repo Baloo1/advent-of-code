@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Day09 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day9Input.txt");
+        File file = new File("./2020/Day09Input.txt");
         Scanner scanner = new Scanner(file);
 
         ArrayList<Long> input = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Day09 {
                 break;
             }
         }
-        System.out.println(problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /*Problem 2*/
         long problem2 = 0;
@@ -58,6 +58,6 @@ public class Day09 {
             }
             currentSum = currentSum + input.get(i);
         }
-        System.out.println(problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 }

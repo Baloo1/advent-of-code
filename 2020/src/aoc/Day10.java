@@ -33,7 +33,7 @@ public class Day10 {
                 joltDiff = input.get(i) - input.get(i - 1);
         }
         problem1 = smolJolt * chonkyJolt;
-        System.out.println(problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /*Problem 2*/
         long problem2 = 0;
@@ -55,6 +55,6 @@ public class Day10 {
             manyAdapters[integer] = x + y + z;
         }
         problem2 = manyAdapters[manyAdapters.length - 1];
-        System.out.println(problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 }

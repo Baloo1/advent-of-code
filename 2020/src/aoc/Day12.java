@@ -30,7 +30,7 @@ public class Day12 {
             problem1(instruction, speed);
         }
         int problem1 = Math.abs(x) + Math.abs(y);
-        System.out.println(problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /* Problem 2 */
         x = 0;
@@ -41,7 +41,7 @@ public class Day12 {
             problem2(instruction, speed);
         }
         int problem2 = Math.abs(x) + Math.abs(y);
-        System.out.println(problem2);
+        System.out.println("Problem 2: " + problem2);
     }
 
     static void problem1(char instruction, int speed) {

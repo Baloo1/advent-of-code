@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Day05 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("./2020/Day5Input.txt");
+        File file = new File("./2020/Day05Input.txt");
         Scanner scanner = new Scanner(file);
 
         /*Problem 1*/
@@ -55,7 +55,7 @@ public class Day05 {
             input.add(row * 8 + last);
         }
         int problem1 = Collections.max(input);
-        System.out.println("Problem 1 :" + problem1);
+        System.out.println("Problem 1: " + problem1);
 
         /*Problem 2*/
         Collections.sort(input);
