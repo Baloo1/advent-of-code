@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.Scanner;
 
-public class Day1 {
+public class Day01 {
     public static HashMap<Integer, Integer> input = new HashMap<>();
     public static int triple = 0;
 

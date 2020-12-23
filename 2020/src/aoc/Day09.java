@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Day9 {
+public class Day09 {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("./2020/Day9Input.txt");
         Scanner scanner = new Scanner(file);
