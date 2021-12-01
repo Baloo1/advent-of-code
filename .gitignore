@@ -32,6 +32,7 @@ cabal.sandbox.config
 
 # Generated files
 .idea/**/contentModel.xml
+*/.idea/**
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
@@ -175,3 +176,5 @@ hs_err_pid*
 /Godeps/
 
 # End of https://www.toptal.com/developers/gitignore/api/go
+
+**/target
