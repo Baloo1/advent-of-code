@@ -7,18 +7,16 @@ const INPUT_DIR: &str = "./input/day01/input.txt";
 
 pub fn run_day01() {
     println!("Day 1");
-
-    let raw_input =
-        fs::read_to_string(INPUT_DIR).expect("Something went wrong reading the file");
-    let input: Vec<i32> = parse_to_i32_vec(raw_input);
-    println!("With input len: {} and value: \n{:?} &", input.len(), input);
-
-    println!("Result Part A: {}", day01a(input.clone()));
-    println!("Result Part B Unsafe: {}", unsafe_day01b(input.clone()));
-    println!("Result Part B: {}", day01b(input.clone()));
+    println!("Result Part A: {}", day01a(INPUT_DIR));
+    println!("Result Part B Unsafe: {}", unsafe_day01b(INPUT_DIR));
+    println!("Result Part B: {}", day01b(INPUT_DIR));
 }
 
-fn day01a(input: Vec<i32>) -> i32 {
+fn day01a(dir: &str) -> i32 {
+    let raw_input =
+        fs::read_to_string(dir).expect("Something went wrong reading the file");
+    let input: Vec<i32> = parse_to_i32_vec(raw_input);
+
     let mut result = 0;
     let mut prev = i32::MAX;
     for x in input {
@@ -30,7 +28,11 @@ fn day01a(input: Vec<i32>) -> i32 {
     result
 }
 
-fn unsafe_day01b(input: Vec<i32>) -> i32 {
+fn unsafe_day01b(dir: &str) -> i32 {
+    let raw_input =
+        fs::read_to_string(dir).expect("Something went wrong reading the file");
+    let input: Vec<i32> = parse_to_i32_vec(raw_input);
+
     let mut result = 0;
     unsafe {
         let window_size = 3;
@@ -48,7 +50,11 @@ fn unsafe_day01b(input: Vec<i32>) -> i32 {
     }
 }
 
-fn day01b(input: Vec<i32>) -> i32 {
+fn day01b(dir: &str) -> i32 {
+    let raw_input =
+        fs::read_to_string(dir).expect("Something went wrong reading the file");
+    let input: Vec<i32> = parse_to_i32_vec(raw_input);
+
     let mut result = 0;
     let window_size = 3;
     for (index, value) in input.iter().enumerate() {
@@ -66,34 +72,46 @@ fn day01b(input: Vec<i32>) -> i32 {
 
 #[cfg(test)]
 mod tests {
+    extern crate test;
+
+    use test::Bencher;
+
     use super::*;
 
     const TEST_DIR: &str = "./input/day01/test.txt";
 
     #[test]
     fn test_day01a() {
-        let raw_test_input =
-            fs::read_to_string(TEST_DIR).expect("Something went wrong reading the file");
-        let test_input: Vec<i32> = parse_to_i32_vec(raw_test_input);
-
-        assert_eq!(day01a(test_input), 7);
+        assert_eq!(day01a(TEST_DIR), 7);
     }
 
     #[test]
     fn test_day01b() {
-        let raw_test_input =
-            fs::read_to_string(TEST_DIR).expect("Something went wrong reading the file");
-        let test_input: Vec<i32> = parse_to_i32_vec(raw_test_input);
-
-        assert_eq!(5, day01b(test_input));
+        assert_eq!(5, day01b(TEST_DIR));
     }
 
     #[test]
     fn test_unsafe_day01b() {
-        let raw_test_input =
-            fs::read_to_string(TEST_DIR).expect("Something went wrong reading the file");
-        let test_input: Vec<i32> = parse_to_i32_vec(raw_test_input);
+        assert_eq!(5, unsafe_day01b(TEST_DIR));
+    }
 
-        assert_eq!(5, unsafe_day01b(test_input));
+    #[bench]
+    fn bench_day01a(b: &mut Bencher) {
+        b.iter(|| day01a(TEST_DIR));
+    }
+
+    #[bench]
+    fn bench_unsafe_day01b(b: &mut Bencher) {
+        b.iter(|| unsafe_day01b(INPUT_DIR));
+    }
+
+    #[bench]
+    fn bench_day01b(b: &mut Bencher) {
+        b.iter(|| day01b(INPUT_DIR));
+    }
+
+    #[bench]
+    fn bench_day01(b: &mut Bencher) {
+        b.iter(|| run_day01());
     }
 }
